@@ -1,16 +1,16 @@
 package br.com.med.voll.api.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+@Table(name = "medicos")
 @Entity(name = "medico")
 @NoArgsConstructor
 @AllArgsConstructor
 @Setter
 @Getter
+@EqualsAndHashCode(of = "id")
 public class Medico {
 
     @Id
@@ -19,8 +19,8 @@ public class Medico {
     private String nome;
     private String email;
     private String crm;
+    @Enumerated(EnumType.STRING)
     private Especialidade especialidade;
-    @OneToMany(mappedBy = "medico")
-    @Column(name = "endereco")
+    @Embedded
     private Endereco endereco;
 }
