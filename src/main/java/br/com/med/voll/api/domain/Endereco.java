@@ -1,5 +1,6 @@
 package br.com.med.voll.api.domain;
 
+import br.com.med.voll.api.dto.EnderecoDto;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.Embedded;
 import lombok.AllArgsConstructor;
@@ -20,4 +21,13 @@ public class Endereco {
     private String complemento;
     private String cidade;
     private String uf;
+
+    public Endereco(EnderecoDto endereco) {
+        this.lougadoro = endereco.logradoro();
+        this.bairro = endereco.bairro();
+        this.cep = endereco.cep();
+        this.numero = endereco.numero();
+        this.cidade = endereco.cidade();
+        this.uf = endereco.uf();
+    }
 }

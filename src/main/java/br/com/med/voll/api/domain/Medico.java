@@ -1,5 +1,6 @@
 package br.com.med.voll.api.domain;
 
+import br.com.med.voll.api.dto.MedicoDto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
@@ -23,4 +24,11 @@ public class Medico {
     private Especialidade especialidade;
     @Embedded
     private Endereco endereco;
+
+    public Medico(MedicoDto dados) {
+        this.nome = dados.nome();
+        this.email = dados.email();
+        this.crm = dados.crm();
+        this.endereco = new Endereco(dados.endereco());
+    }
 }
