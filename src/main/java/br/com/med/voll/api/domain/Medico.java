@@ -20,7 +20,7 @@ public class Medico {
     private String email;
     private String crm;
     private Especialidade especialidade;
-    @OneToMany
-    @JoinColumn(name = "endereco_id")
+    @OneToMany(mappedBy = "medico")
+    @Column(name = "endereco")
     private Endereco endereco;
 }
