@@ -9,7 +9,13 @@ public class PacienteController {
 
     @PostMapping
     @CrossOrigin
-    public void cadastrat(@RequestBody PacienteDto pacienteDto){
+    public void cadastra(@RequestBody PacienteDto pacienteDto){
         System.out.println("Dados recebidos: " + pacienteDto);
+    }
+
+    @GetMapping
+    @CrossOrigin
+    public String status(){
+        return "Api /paciente Funcionando!";
     }
 }
