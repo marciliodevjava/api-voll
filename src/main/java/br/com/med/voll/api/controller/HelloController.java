@@ -1,16 +1,20 @@
 package br.com.med.voll.api.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.Mapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "hello")
 public class HelloController {
 
+
     @GetMapping
+    @CrossOrigin
     public String olaMundo(){
-        return "Hello World!";
+        return "Hello World! SpringBoot!!!";
+    }
+    @GetMapping("/status")
+    @CrossOrigin
+    public String status(){
+        return "Api Funcionando!";
     }
 }
