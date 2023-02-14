@@ -1,6 +1,6 @@
-package br.com.med.voll.api.controller;
+package br.com.med.voll.api.resource;
 
-import br.com.med.voll.api.medico.MedicoDto;
+import br.com.med.voll.api.dto.MedicoDto;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

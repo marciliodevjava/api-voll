@@ -1,4 +1,4 @@
-package br.com.med.voll.api.controller;
+package br.com.med.voll.api.resource;
 
 import org.springframework.web.bind.annotation.*;
 
